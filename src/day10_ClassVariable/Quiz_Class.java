@@ -13,7 +13,6 @@ public class Quiz_Class {
 		random = ran;
 		System.out.println("컴퓨터 숫자 : "+random);
 		System.out.println("=== START ===");
-		
 		while(true) {
 			score++;
 			System.out.println("Input Number --> ");
@@ -23,26 +22,22 @@ public class Quiz_Class {
 			if(end == 1) {
 				break;
 			}
-			
 		}
 	}
-	
+
 	public void UpDown() {
 		if(n1 == random) {
 			System.out.println(score+"회 만에 맞췄습니다!");
-			highScore();
+			if(score<best) {
+				best = score;
+				System.out.println("최고 기록 달성");
+			}
 			end =1;
+			
 		}else if(n1<random) {
 			System.out.println("=== UP ===");
 		}else {
 			System.out.println("=== Down ===");
-		}
-	}
-	
-	public void highScore() {
-		if(score<best) {
-			best = score;
-			System.out.println("최고 기록 달성");
 		}
 	}
 	
